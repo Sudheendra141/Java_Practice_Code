@@ -1,0 +1,32 @@
+import java.util.*;
+
+public class CombinatiosSum {
+	Scanner s = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		ArrayList<Integer> al=new ArrayList<>();
+		solve(0,new ArrayList<Integer>(Arrays.asList(1,2,3)),al,5);
+		
+	}
+	static void solve(int i,ArrayList<Integer> arr,ArrayList<Integer> al,int sum)
+	{
+		if(sum<=0)
+		{
+			if(sum==0)
+			{
+				System.out.println(al);
+			}
+			return ;
+		}
+		for(int j=i;j<arr.size();j++)
+		{
+			al.add(arr.get(j));
+			solve(i,arr,al,sum-arr.get(j));
+			al.remove(al.size()-1);
+			
+		}
+	}
+}

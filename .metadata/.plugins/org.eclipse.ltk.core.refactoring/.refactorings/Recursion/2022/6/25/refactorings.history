@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;tree.Height.java&apos; to &apos;HeightOfBinaryTree.java&apos;&#x0D;&#x0A;- Original project: &apos;Recursion&apos;&#x0D;&#x0A;- Original element: &apos;tree.Height.java&apos;&#x0D;&#x0A;- Renamed element: &apos;tree.HeightOfBinaryTree.java&apos;" description="Rename compilation unit &apos;Height.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;tree{Height.java" name="HeightOfBinaryTree.java" references="false" stamp="1655119697005" version="1.0"/>
+</session>

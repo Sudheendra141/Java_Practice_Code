@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;Subsequence&apos; to &apos;PrintSubsequence&apos;&#x0D;&#x0A;- Original project: &apos;Recursion&apos;&#x0D;&#x0A;- Original element: &apos;Subsequence&apos;&#x0D;&#x0A;- Renamed element: &apos;PrintSubsequence&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Subsequence&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{Subsequence.java[Subsequence" matchStrategy="1" name="PrintSubsequence" qualified="false" references="true" similarDeclarations="false" stamp="1654257130897" textual="false" version="1.0"/>
+</session>

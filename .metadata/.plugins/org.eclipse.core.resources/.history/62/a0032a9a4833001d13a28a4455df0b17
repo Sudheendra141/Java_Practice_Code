@@ -1,0 +1,12 @@
+
+public class DecimalToBinaryConversion {
+
+	public static void main(String[] args) {
+		
+		String str="";
+		
+		System.err.println("kdnk");
+		System.out.println("kdnk");
+		
+	}
+}

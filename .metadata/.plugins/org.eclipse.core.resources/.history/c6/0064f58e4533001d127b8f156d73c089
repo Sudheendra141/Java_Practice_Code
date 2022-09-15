@@ -1,0 +1,43 @@
+import java.util.*;
+
+public class GenrateAllBalanceParanthasis {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner s = new Scanner(System.in);
+
+		int n=s.nextInt();
+		String str="(";
+		solve(str,0,1,n);
+		System.out.println("Done..");
+	}
+	static void solve(String str,int c,int o,int n)
+	{
+		//System.out.println("16");
+		if(c==n && o==n)
+		{
+			//System.out.println("18");
+			System.out.println(str);
+			return ;
+		}
+		if(o>c)
+		{
+			if(o!=n)
+			{
+				solve(str+"(",c,o+1,n);
+			}
+			else if(c!=n)
+			{
+				solve(str+")",c+1,o,n);
+			}
+
+		}
+		 if(o==c)
+		{
+			 if(o!=n)
+				{
+					solve(str+"(",c,o+1,n);
+				}
+		}
+	}
+}

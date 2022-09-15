@@ -1,0 +1,38 @@
+package problemsOnString;
+import java.util.*;
+public class Hemanth {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		String str="Un was ests 0n 24-10-1945. india got freedom on 15-08-1947";
+		System.out.println(solve(str));
+	}
+	static int solve(String str)
+	{
+		for(int i=0;i<str.length();i++)
+		{
+			if(str.charAt(i)=='.')
+			{
+				str=str.substring(0,i)+" "+str.substring(i+1);
+			}
+		}
+		HashSet<Integer> hs=new HashSet<>();
+		String[] arr=str.split(" ");
+		for(int i=0;i<arr.length;i++)
+		{
+			if(arr[i].length()>=9)
+			{
+				int n=arr[i].length();
+				String temp[]=arr[i].split("-");
+				if(temp.length==3)
+				{
+					hs.add(Integer.parseInt(temp[2]));
+				}
+			}
+		}
+		return hs.size();
+	}
+
+}

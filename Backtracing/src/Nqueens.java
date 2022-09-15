@@ -1,0 +1,97 @@
+import java.util.*;
+public class Nqueens {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner s=new Scanner(System.in);
+		int n=s.nextInt();
+		int board[][]=new int [n][n];
+		
+		solve(0,board);
+	}
+	static void solve(int col,int arr[][])
+	{
+	//	System.out.println("starting of fun");
+		if(col>=arr[0].length)
+		{
+		/// 	System.out.println("Base Case");
+			System.out.println("----------------");
+			printMatrix(arr);
+			System.out.println("----------------");
+			
+				return;
+		}
+		
+		int invalid=0;
+		for(int i=0;i<arr.length;i++)
+		{
+			//System.out.println("In rows repeating");
+				if(isValid(arr,i,col))
+				{
+					//System.out.println("Found a valid pair at i: "+i+" j: "+col);
+					arr[i][col]=1;
+					solve(col+1,arr);
+					arr[i][col]=0;
+					
+				}
+			
+		}
+		
+	}
+	static boolean isValid(int arr[][],int row,int col)
+	{
+		// checking vertically:
+		for(int i=0;i<arr.length;i++)
+		{
+			if(arr[i][col]==1)
+			{
+				return false;
+			}
+		}
+		// checking horizantally:
+				for(int i=0;i<arr[0].length;i++)
+				{
+					if(arr[row][i]==1)
+					{
+						return false;
+					}
+				}
+				
+				// checking \ direction
+				 int i=row,j=col;
+				 
+				 while(i>=0 && j>=0)
+				 {
+					 if(arr[i][j]==1)
+						 return false ;
+					 i--;
+					 j--;
+				 }
+				// checking / direction
+				 i=row;j=col;
+			
+				 while(i<arr.length && j>=0)
+				 {
+					 //System.out.println("i: "+i+" j: "+j+" row: "+row+" col: "+col);
+					 if(arr[i][j]==1)
+						 return false ;
+					 i++;
+					 j--;
+				 }
+				 
+				
+			
+				return true;
+	}
+	static void printMatrix(int arr[][])
+	{
+		for(int i=0;i<arr.length;i++)
+		{
+			for(int j=0;j<arr[0].length;j++)
+			{
+				System.out.print(arr[i][j]+" ");
+			}
+			System.out.println();
+		}
+	}
+}

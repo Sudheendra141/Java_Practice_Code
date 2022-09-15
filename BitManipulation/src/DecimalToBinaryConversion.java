@@ -1,0 +1,33 @@
+
+public class DecimalToBinaryConversion {
+
+	public static void main(String[] args) {
+
+		String str = "101";
+
+		System.out.println("str-> " + binaryToDecimal(str));
+		int n = 5;
+		System.out.println("n-> " + decimalToBinary(n));
+
+	}
+
+	static int binaryToDecimal(String binary) {
+		int decimal = 0;
+		int n = binary.length();
+		for (int i = n - 1; i >= 0; i--) {
+
+			decimal += ((int) Math.pow(2, n - i - 1)) * (binary.charAt(i) - '0');
+		}
+		return decimal;
+	}
+
+	static String decimalToBinary(int n) {
+		StringBuilder binary = new StringBuilder("");
+		while (n != 0) {
+			binary.append(n % 2);
+			n /= 2;
+		}
+		return binary.reverse().toString();
+
+	}
+}

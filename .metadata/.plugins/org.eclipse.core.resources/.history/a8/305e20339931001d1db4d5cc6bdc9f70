@@ -1,0 +1,83 @@
+import java.util.*;
+
+public class SpiralMatrix {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int arr[][] = { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 } };
+
+		printSpiral(arr);
+
+	}
+
+	static void printSpiral(int arr[][]) {
+	
+		int cols = arr[0].length;
+		int rows = arr.length;
+		int steps = cols;
+		boolean left = false, right = false, top = false, down = false;
+		right = true;
+		int i = 0, j = 0;
+		int iter = 0;
+		while (iter <= rows - 1) {
+			System.out.println("  i: "+i+"  j: "+j+" steps: "+steps+" iter "+iter);
+			if (right) {
+
+				if (steps == 0) {
+					right = false;
+					down = true;
+					iter++;
+					steps = rows - iter;
+					i++;
+					j--;
+				} else {
+					System.out.println(arr[i][j]);
+					j++;
+					steps--;
+				}
+			} else if (down) {
+
+				if (steps == 0) {
+					left = true;
+					down = false;
+					steps = cols - iter;
+					j--;
+					i--;
+				} else {
+					System.out.println(arr[i][j]);
+					i++;
+					steps--;
+				}
+			} else if (left) {
+
+				if (steps == 0) {
+					left = false;
+					top = true;
+					iter++;
+					steps = rows - iter;
+					i--;
+					j++;
+				} else {
+					System.out.println(arr[i][j]);
+					j--;
+					steps--;
+				}
+			} else if (top) {
+
+				if (steps == 0) {
+					right = true;
+					top = false;
+					steps = cols - iter;
+					j++;
+					i++;
+				} else {
+					System.out.println(arr[i][j]);
+					i--;
+					steps--;
+				}
+			}
+
+		}
+	}
+
+}

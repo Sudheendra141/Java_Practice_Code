@@ -1,0 +1,39 @@
+import java.util.*;
+
+public class MaximumSumSubarrayWithSumK {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner s = new Scanner(System.in);
+		int arr[] = { 2, 5, 1, 8, 2, 9 };
+		int n = arr.length;
+		int sum = 0;
+		int mx = 0;
+		int mxi = -1;
+		int k = 3;
+		for (int i = 0; i < k; i++) {
+			sum += arr[i];
+		}
+		if (sum > mx) {
+			mxi = 0;
+			mx = sum;
+		}
+
+		for (int i = 0; i < n - k; i++) {
+			sum -= arr[i];
+
+			sum += arr[i + k];
+			if (sum > mx) {
+				mxi = i + 1;
+				mx = sum;
+			}
+
+		}
+
+		for (int j = mxi; j < mxi + k; j++) {
+			System.out.print(arr[j] + " ");
+		}
+		System.out.print("\n" + mx);
+	}
+
+}

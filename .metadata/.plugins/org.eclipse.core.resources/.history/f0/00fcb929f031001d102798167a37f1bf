@@ -1,0 +1,38 @@
+import java.util.*;
+
+import java.util.*;
+ class Solution {
+    static ArrayList<ArrayList<Integer>> FindAllSubsets(int n, ArrayList<Integer> arr) {
+        // Write your code here.
+        ArrayList<ArrayList<Integer>> ans=new ArrayList<ArrayList<Integer>>();
+        ArrayList<Integer> temp=new ArrayList<Integer>();
+        solve(0,ans,temp,n,arr);
+        return ans;
+    }
+	static void solve(int i,ArrayList<ArrayList<Integer>> ans,ArrayList<Integer> temp,int n, ArrayList<Integer> arr)
+    {
+        if(i==arr.size())
+        {
+        	System.out.println(temp);
+            ans.add(new ArrayList<Integer>(temp));
+            return;
+        }
+        solve(i+1,ans,temp,n,arr);
+        temp.add(arr.get(i));
+        solve(i+1,ans,temp,n,arr);
+        temp.remove(temp.size()-1);
+    }
+}
+
+
+public class allPossiblesubsets {
+	Scanner s = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ArrayList<Integer> al=new ArrayList<>(Arrays.asList(1,2,3));
+		Solution.FindAllSubsets(3, al);
+		
+
+	}
+}
